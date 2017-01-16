@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>알고리즘 09</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <!-- alpha_string46함수는 문자열 s를 매개변수로 입력받습니다.
+s의 길이가 4혹은 6이고, 숫자로만 구성되있는지 확인해주는 함수를 완성하세요.
+예를들어 s가 "a234"이면 False를 리턴하고 "1234"라면 True를 리턴하면 됩니다
+-->
+
+<script>
+// 매개변수이 무조건 string으로 인식됩니다. 따라서 각 index값을 Number()에 넣어 타입을 체크해봅니다. 
+// isNaN()은 숫자가 아닐 경우 true를 반환합니다. 
+function chkType(chk){
+  var char = [];
+  for(var i=0; i < chk.length; i++){
+    char[i] = Number(chk[i]);
+    if(isNaN(char[i])){
+      return false;
+    }
+  }
+  return true;
+}
+
+function alpha_string46(s){
+  var result = true;
+  var chk_length = s.length;
+  if(chkType(s)){
+    if( chk_length === 4 || chk_length === 6 ){
+      return true;
+    }else { return false;}
+  }else { return false;}
+  return result;
+}
+// 아래는 테스트로 출력해 보기 위한 코드입니다.
+console.log( alpha_string46("a134") );
+</script>
+</body>
+</html>

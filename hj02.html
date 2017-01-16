@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>현정언니 문제 02</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<!--  -->
+<script>
+function plus() {
+	var result = 0;
+	if ( !checkargs( arguments, 'number') ) {
+		return false;
+	}
+	for(var j=0; j<arguments.length; j++){
+		result += arguments[j];
+	}
+	return console.log(result);
+}
+ 
+function checkargs(args, type) {
+	for( var i = 0; i < args.length; i++) {
+		var nums = args[i];
+		if(typeof nums !== type){
+			return false;
+		} return true;
+	}
+	
+}
+ 
+plus(1,2,3,4);
+</script>
+</body>
+</html>

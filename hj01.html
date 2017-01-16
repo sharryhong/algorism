@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>현정언니 문제 01</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<!-- 버그가 있는 소스 : https://git.io/vMOLp
+ 
+아래 결과값이 나오도록 수정하는 문제
+calculate(2,5,multiplyDouble); //20 (2*5*2=20 => 콘솔에 20) 
+calculate(10,3,multiplyDouble); //60 (10*3*2=60 => 콘솔에 60) -->
+<script>
+// 타입 체크하는 함수 
+function checkargs(a,b,type) {
+	//var checkResult = null; // 이건 뭣에 쓰는 변수인고? true, false 체크하는 변수로 써보자. 변수 안써도됨..
+	if(typeof a !== type || typeof b !== type) return false;
+	else return true;
+}
+
+function multiplyDouble(num1,num2) { // 매개변수 num2, num2를 num1, num2로 수정
+	var DOUBLE = 2;
+	var sum = num1 * num2; // *2 삭제
+	var result = sum * DOUBLE;
+	
+	return result;
+}
+
+function calculate(num1,num2, func) {
+	if(!checkargs(num1,num2,"number")){ // checkargs함수 실행시 type이 다를 경우 false
+		return console.log("not number..");
+	}
+	if(typeof func !== "function"){
+		return console.log("not function..");
+	}else{
+		var result = func(num1,num2);
+		console.log("result is ", result);
+	}
+}
+
+calculate(2,5,multiplyDouble);
+calculate(10,3,multiplyDouble); 
+</script>
+</body>
+</html>
