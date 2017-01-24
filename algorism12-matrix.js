@@ -12,8 +12,9 @@ function sumMatrix(A,B){
 			answer[i][j] = A[i][j] + B[i][j];
 		}
 	}
+
 	return answer;
-	// return '['+'['+answer[0][0]+','+ answer[0][1]+']'+','+'['+answer[1][0]+','+ answer[1][1]+']'+']';
+	//return '['+'['+answer[0][0]+','+ answer[0][1]+']'+','+'['+answer[1][0]+','+ answer[1][1]+']'+']';
 }
 
 // 아래는 테스트로 출력해 보기 위한 코드입니다.
